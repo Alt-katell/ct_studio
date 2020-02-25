@@ -1,8 +1,6 @@
-<!-- This is a test to see of the index action of the CategoriesController works -->
 
-<h2>All categories</h2>
-
-<div class="my-container">
+<<<<<<< HEAD
+<!-- <div class="my-container">
   <% @categories.each do |c| %>
     <%= link_to(category_path(c.id), class: 'cat-card') do %>
       <img src="https://images.unsplash.com/photo-1572274738401-abf0ce8c05ca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="cat image">
@@ -10,5 +8,10 @@
     <% end %>
   <% end %>
 </div>
-
+ -->
+=======
+<% @categories.each do |category| %>
+  <%= link_to category.name, category_path(category.id) %>
+<% end %>
+>>>>>>> master
 

@@ -1,6 +1,7 @@
+<<<<<<< HEAD
 <!-- This is a test to see of the index action of the CategoriesController works -->
 
-<h2>All designs of a category</h2>
+<!-- <h2>All designs of a category</h2>
 
 <div class="my-container">
   <% @designs.each do |d| %>
@@ -18,4 +19,12 @@
       </div>
     </div>
   <% end %>
-</div>
+</div> -->
+=======
+
+<% @designs.each do |design| %>
+  <%= cl_image_tag design.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
+<%= link_to "Back to category list", categories_path %>
+>>>>>>> master
