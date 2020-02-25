@@ -1,10 +1,6 @@
 class DesignsController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-    @designs = Design.all
-  end
-
   def show
     @design = Design.find(params[:id])
   end
@@ -41,6 +37,4 @@ class DesignsController < ApplicationController
   def design_params
     params.require(:design).permit(:name, :tags, :file_type, :categories, :indexed_colors, :layers, :pattern, :price, :photo )
   end
-
-
 end
