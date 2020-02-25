@@ -8,6 +8,10 @@
 require 'open-uri'
 require 'faker'
 
+User.destroy_all
+Category.destroy_all
+Tag.destroy_all
+
 cat = %W(Abstract Animal Colors Floral Geometry Illustration Kids Monochrome Placement)
 tags = %W(homedesign branding photooftheday like m instagram bhfyp designinspiration beautiful digitalart lifestyle vintage sketch graphic arte photoshop marketing architect modern arquitetura wood painting follow illustrator picoftheday beauty archilovers construction nature madeinitaly)
 
