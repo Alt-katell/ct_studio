@@ -1,6 +1,6 @@
 <h1>One design</h1>
 
-<div><%= @design.photo %></div>
+<div><photo></div>
 
 <div id="design_description" >
   <p><%= @design.name %></p>
@@ -9,6 +9,6 @@
   <p><%= @design.file_type %></p>
   <p><%= @design.layers %></p>
   <p><%= @design.indexed_colors %></p>
-  <p><%= @design.categories %></p>
-  <p><%= @design.tags %></p>
+  <p><%= @design.categories.first.name %></p>
+  <p><%= @design.tags.first.name %></p>
 </div>
