@@ -15,7 +15,6 @@ Tag.destroy_all
 cat = %W(Abstract Animal Colors Floral Geometry Illustration Kids Monochrome Placement)
 tags = %W(homedesign branding photooftheday like m instagram bhfyp designinspiration beautiful digitalart lifestyle vintage sketch graphic arte photoshop marketing architect modern arquitetura wood painting follow illustrator picoftheday beauty archilovers construction nature madeinitaly)
 
-
 2.times do
   n = Faker::Name.first_name
   User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, address: Faker::Address.full_address, phone_number: Faker::PhoneNumber.cell_phone, email:"#{n.downcase}@web.com", password:"123456")

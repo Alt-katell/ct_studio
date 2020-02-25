@@ -8,9 +8,10 @@ class Design < ApplicationRecord
 
 
   validates :name, presence: true
-  validates :file_type, presence: true, inclusion: { in: ["psd", "ai"] }
+  validates :photo, presence: true
+  validates :file_type, presence: true
   validates :pattern, presence: true, inclusion: { in: ["seamless tile", "placement"] }
   validates :price, presence: true
-  validates :tags, length: { minimum: 1, maximum: 5 }
-  validates :categories, length: { minimum: 1, maximum: 3 }
+  validates :tags, presence: true, length: {minimum: 1, maximum: 5, message: "Please choose between 1 and 5 tags"}
+  validates :categories, presence: true, length: {minimum: 1, maximum: 3, message: "Please choose between 1 and 3 caategories"}
 end
