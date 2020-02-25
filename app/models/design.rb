@@ -1,6 +1,8 @@
 class Design < ApplicationRecord
   belongs_to :user
+  has_many :design_tags, dependent: :destroy
   has_many :tags, through: :design_tags
+  has_many :design_categories, dependent: :destroy
   has_many :categories, through: :design_categories
 
   validates :file_type, presence: true, inclusion: { in: ["psd", "ai"] }
