@@ -3,6 +3,7 @@ ruby '2.6.5'
 
 # My gems
 gem 'devise'
+gem 'dotenv-rails', groups: [:development, :test]
 
 # ----------------------------
 
