@@ -1,8 +1,20 @@
-<!-- This is a test to see of the index action of the CategoriesController works -->
-
 <h2>All designs of a category</h2>
 
-
-<% @designs.each do |design| %>
-  <%= design.name %>
-<% end %>
+<div class="my-container">
+  <% @designs.each do |d| %>
+    <% t = d.tags.map { |t| t.name } %>
+    <div class="des-card">
+      <div class ="d-img" style="background-image: url('<%= cl_image_path d.photo.key %>')"></div>
+      <div class="info d-flex justify-content-between">
+        <div class="tit">
+          <h5><%= d.name %></h5>
+          <p>Created at: <%= d.created_at.strftime("%Y-%m-%d") %></p>
+        </div>
+        <div class="price">
+          <h5><%= d.price %>$</h5>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<%= link_to "Back to category list", categories_path %>
