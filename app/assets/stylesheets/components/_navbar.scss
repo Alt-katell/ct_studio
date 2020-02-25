@@ -6,11 +6,11 @@
 
   a {
     color: black;
-    margin-right: 12px;
+    padding: 12px;
   }
 
   a:hover {
-    text-decoration: underline;
+    border-bottom: solid 1px black;
   }
 }
 
