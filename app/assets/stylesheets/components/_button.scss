@@ -1,0 +1,21 @@
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.button {
+  padding: 12px 20px;
+  color: white;
+  background: black;
+}
+
+.button:hover {
+    color:black;
+    background:white;
+    border: solid 2px black;
+    transition: 0.3s;
+}
+
