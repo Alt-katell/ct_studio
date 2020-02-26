@@ -1,0 +1,5 @@
+<h1>My designs as a designer</h1>
+
+<% @designs.each do |design| %>
+  <%= link_to design.photo.key, design_path(design.id) %>
+<% end %>
