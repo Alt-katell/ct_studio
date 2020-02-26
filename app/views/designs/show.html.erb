@@ -6,7 +6,7 @@
     <div class="informations">
       <div class="design_title">
         <h1><%= @design.name %></h1>
-        <h2><%= @design.price %></h2>
+        <h2>$ <%= @design.price %></h2>
       </div>
       <div class="design_info">
         <div class="compart">
@@ -34,14 +34,20 @@
         <div class="btn_compart">
           <%= link_to "Buy this design", category_path(@design.categories.first.name), class: "button" %>
         </div>
+      <% else %>
+        <% if @design.user == current_user %>
+          <div class="btn_compart">
+            <%= link_to "Update your design", edit_design_path(@design), class: "button mr-3" %>
+            <%= link_to "Delete your design",  design_path(@design), method: :delete, data: { confirm: "Delete #{@design.name}?" } %>
+          </div>
+        <% end %>
       <% end %>
       </div>
     </div>
+    <div class="categorie_btn">
+      <% @design.categories.each do |cat| %>
+        <%= link_to "Designs of #{cat.name} categorie", category_path(cat), class: 'button mb-6' %>
+      <% end %>
+    </div>
   </div>
 </div>
-
-<p><%= link_to "Update your design", edit_design_path(@design) %></p>
-
-<p><%= link_to "Delete your design",  design_path(@design), method: :delete, data: { confirm: "Delete #{@design.name}?" } %></p>
-
-<p><%= link_to "Back to 'My Designs' ", design_path(@design) %></p>

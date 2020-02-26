@@ -7,7 +7,11 @@
   </div>
   <div class="navbar_links">
     <%= link_to 'Designers', categories_path %>
-    <%= link_to 'My designs', categories_path %>
+    <% if current_user.company %>
+      <%= link_to 'My design purshases', categories_path %>
+    <% else %>
+      <%= link_to 'My designs', my_designs_path %>
+    <% end %>
     <%= link_to 'Profil', categories_path %>
   </div>
 </nav>
