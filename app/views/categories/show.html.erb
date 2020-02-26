@@ -1,6 +1,30 @@
-<h2>All designs of a category</h2>
+<div class="container">
+  <div class="category_show_title">
+    <h2><strong>All designs of a category</strong></h2>
+    <p>Textures, shapes and colors</p>
+    <p>Undefinable styles to make a unique statement.</p>
+  </div>
+
+  <div class="search">
+    <div class="search_keyword">
+      <p><strong>Search by keyword</strong></p>
+      <input type="text" placeholder="Search designs">
+    </div>
+
+    <div class="search_colors">
+      <p><strong>Search by color</strong></p>
+      <div class="colors_btn">
+        <% colors = ['red', 'yellow', 'blue', 'green', 'pink', 'black'] %>
+        <% colors.each do |color| %>
+          <i class="fas fa-circle" style="color: <%= color %>"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="my-container">
+
   <% @designs.each do |d| %>
   <%= link_to(design_path(d.id)) { %>
       <div class="des-card">
