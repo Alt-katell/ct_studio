@@ -31,9 +31,11 @@
           <p>Created at: <%= @design.created_at.strftime("%Y-%m-%d") %></p>
         </div>
       </div>
-      <div class="btn_compart">
-        <%= link_to "Buy this design", category_path(@design.categories.first.name), class: "button" %>
-      </div>
+      <% if current_user.company %>
+        <div class="btn_compart">
+          <%= link_to "Buy this design", category_path(@design.categories.first.name), class: "button" %>
+        </div>
+      <% end %>
       </div>
     </div>
   </div>
