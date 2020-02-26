@@ -6,7 +6,7 @@
     <div class="informations">
       <div class="design_title">
         <h1><%= @design.name %></h1>
-        <h2><%= @design.price %></h2>
+        <h2>$ <%= @design.price %></h2>
       </div>
       <div class="design_info">
         <div class="compart">
@@ -44,6 +44,10 @@
       <% end %>
       </div>
     </div>
-    <%= link_to "Back to 'My Designs' ", categories_path, class: 'button mb-6' %>
+    <div class="categorie_btn">
+      <% @design.categories.each do |cat| %>
+        <%= link_to "Designs of #{cat.name} categorie", category_path(cat), class: 'button mb-6' %>
+      <% end %>
+    </div>
   </div>
 </div>
