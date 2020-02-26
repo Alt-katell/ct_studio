@@ -38,7 +38,7 @@ end
   cats_d = Category.all.sample((1..3).to_a.sample)
   tags_d = Tag.all.sample((1..5).to_a.sample)
   user_d = User.where('company = ?', false).sample
-  n = Faker::Beer.brand
+  n = Faker::Ancient.hero
   d = Design.new(name: n, file_type: %w(psd ai).sample, pattern: ['seamless tile', 'placement'].sample, price: (200..400).to_a.sample)
   cats_d.each do |c|
     d.categories << c
