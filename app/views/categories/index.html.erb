@@ -1,10 +1,11 @@
   <div class="my-container">
     <% @categories.each do |c| %>
       <%= link_to(category_path(c.id), class: 'cat-card') do %>
-        <div class="c-img" style="background-image: url('app/images/Categories_images/ctstudio-<%= c.name.upcase %>.jpg')"></div>
-
+        <img src="<%= image_url "ctstudio-#{c.name.upcase}.jpg" %>" alt="cat image">
         <h5><%= c.name %></h5>
       <% end %>
     <% end %>
   </div>
+
+  <%= link_to 'sign out', destroy_user_session_path, method: :delete %>
 
