@@ -1,3 +1,11 @@
+<div class="category_show_title">
+  <h2><strong>The Pattern Show</strong></h2>
+  <p>
+    Explore our cataog <br>
+    and find the perfect print to your products
+  </p>
+</div>
+
 <div class="my-container">
   <% @categories.each do |c| %>
     <%= link_to(category_path(c.id), class: 'cat-card') do %>
