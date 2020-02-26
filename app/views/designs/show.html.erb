@@ -1,14 +1,40 @@
-<h1>One design</h1>
+<div class="container">
+  <div class="design_card">
+    <div class="design_img">
+      <%= cl_image_tag @design.photo.key %>
+    </div>
+    <div class="informations">
+      <div class="design_title">
+        <h1><%= @design.name %></h1>
+        <h2><%= @design.price %></h2>
+      </div>
+      <div class="design_info">
+        <div class="compart">
+          <p>Designer : <%= @design.user.first_name %> <%= @design.user.last_name %></p>
+          <p>Layers : <%= @design.layers %></p>
+        </div>
+        <div class="compart">
+          <p>File resolution: 300 dpi</p>
+          <p>Fyle type : <%= @design.file_type %></p>
+        </div>
+        <div class="compart">
+          <p>Categories : <% @design.categories.each do |cat| %>
+              <%= cat.name  %>
+            <% end %>
 
-<div><photo></div>
-
-<div id="design_description" >
-  <p><%= @design.name %></p>
-  <p><%= @design.user_id %></p>
-  <p>File resolution: 300 dpi</p>
-  <p><%= @design.file_type %></p>
-  <p><%= @design.layers %></p>
-  <p><%= @design.indexed_colors %></p>
-  <p><%= @design.categories.first.name %></p>
-  <p><%= @design.tags.first.name %></p>
+          </p>
+          <p>
+            Keywords : <% @design.tags.each do |tag| %>
+              <%= tag.name  %>
+            <% end %>
+          </p>
+          <p>Created at: <%= @design.created_at.strftime("%Y-%m-%d") %></p>
+        </div>
+      </div>
+      <div class="btn_compart">
+        <%= link_to "Buy this design", category_path(@design.categories.first.name), class: "button" %>
+      </div>
+      </div>
+    </div>
+  </div>
 </div>
