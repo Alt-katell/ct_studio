@@ -6,10 +6,11 @@ class PurchasesController < ApplicationController
     @design = Design.find(params[:design_id])
 
     @purchase = Purchase.create({ user_id: @user.id, design_id: @design.id })
-    redirect_to design_purchase_path(@purchase)
+    redirect_to design_purchase_path(@design, @purchase)
   end
 
   def show
     @purchase = Purchase.find(params[:id])
+    @design = @purchase.design
   end
 end
