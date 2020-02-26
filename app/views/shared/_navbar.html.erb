@@ -6,15 +6,18 @@
     <% end %>
   </div>
   <div class="navbar_links">
+    <% unless current_user.company %>
+      <%= link_to 'Add a new design', new_design_path %>
+    <% end %>
     <%= link_to 'Designers', designers_path %>
     <% if current_user.company %>
       <%= link_to 'My design purshases', categories_path %>
     <% else %>
       <%= link_to 'My designs', my_designs_path %>
     <% end %>
-    <span data-toggle="dropdown" class="span_link"><strong><%= current_user.first_name %></strong></span>
+    <span data-toggle="dropdown" class="span_link"><%= current_user.first_name %><i class="fas fa-angle-down"></i></span>
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-      <%= link_to "My accompt", edit_user_registration_path, class: "dropdown-item" %>
+      <%= link_to "My account", edit_user_registration_path, class: "dropdown-item" %>
       <%= link_to "Log out", destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
     </div>
   </div>

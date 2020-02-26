@@ -21,10 +21,21 @@
 }
 
 .span_link {
-  color: black;
+  color: white;
   padding: 12px;
+  margin-right: 20px;
+  background: black;
+  border: solid 1px black;
 
   &:hover {
-    border: solid 1px black;
+    color: black;
+    background: white;
+    cursor: pointer;
+  }
+
+  i {
+  padding-left: 8px;
   }
 }
+
+
