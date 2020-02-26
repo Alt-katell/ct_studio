@@ -16,3 +16,15 @@
   }
 }
 
+.logo_part a:hover {
+  border: none;
+}
+
+.span_link {
+  color: black;
+  padding: 12px;
+
+  &:hover {
+    border: solid 1px black;
+  }
+}

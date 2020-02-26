@@ -31,14 +31,44 @@
         </div>
       </div>
       <% if current_user.company %>
-        <div class="btn_compart">
-          <%= link_to "Buy this design", category_path(@design.categories.first.name), class: "button" %>
+        <!-- Button trigger modal -->
+        <button type="button" class="button" data-toggle="modal" data-target="#exampleModalCenter">
+          Buy
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Purchase confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body text-center">
+                This is your payment confirmation! <br>
+                Please read carefully all the details of your purchase: <br> <br>
+                Name: <strong><%= @design.name %></strong> <br>
+                Price: <strong>$<%= @design.price %></strong> <br>
+                Designer: <strong><%= @design.user.first_name %></strong> <br>
+                Layers: <strong><%= @design.layers %></strong> <br>
+                File Type: <strong><%= @design.file_type %></strong> <br> <br> <br>
+                <%= cl_image_tag @design.photo.key, class: 'small-img' %>
+              </div>
+              <div class="modal-footer">
+                <%= link_to "Pay", design_purchases_path(@design), method: :post, class: "button" %>
+                <button type="button" class="button" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
         </div>
+
       <% else %>
         <% if @design.user == current_user %>
           <div class="btn_compart">
             <%= link_to "Update your design", edit_design_path(@design), class: "button mr-3" %>
-            <%= link_to "Delete your design", design_path(@design), class: 'button ml-3' %>
+            <%= link_to "Delete your design",  design_path(@design), method: :delete, data: { confirm: "Delete #{@design.name}?" } %>
           </div>
         <% end %>
       <% end %>
