@@ -1,0 +1,42 @@
+.my-container {
+  width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 32px 64px;
+}
+
+.form-container {
+  width: 1200px;
+  margin: 32px auto;
+  border: 2px solid $light-gray;
+  padding: 16px 32px;
+  background-color: rgb(240,240,240);
+
+  .file-info {
+    border-top: 1px solid $light-gray;
+    border-bottom: 1px solid $light-gray;
+    margin: 8px 0;
+  }
+
+  .files-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
+    color: $gray;
+  }
+
+  .op fieldset{
+    display: flex;
+    width: 200px;
+  }
+
+
+}
+
+input .form-check {
+  display: inline-block;
+  // grid-template-columns: 1fr 1fr 1fr 1fr;
+}
