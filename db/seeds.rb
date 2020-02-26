@@ -13,18 +13,20 @@ Category.destroy_all
 Tag.destroy_all
 
 cat = %W(Abstract Animal Colors Floral Geometry Illustration Kids Monochrome Placement)
-tags = %W(homedesign branding photooftheday like m instagram bhfyp designinspiration beautiful digitalart lifestyle vintage sketch graphic arte photoshop marketing architect modern arquitetura wood painting follow illustrator picoftheday beauty archilovers construction nature madeinitaly)
+tags = %W(vintage sketch graphic arte photoshop marketing architect modern arquitetura wood painting follow illustrator picoftheday)
 
-2.times do
-  n = Faker::Name.first_name
-  User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, address: Faker::Address.full_address, phone_number: Faker::PhoneNumber.cell_phone, email:"#{n.downcase}@web.com", password:"123456")
-end
+name_1 = 'Santiago'
+name_2 = 'Vicky'
+User.create(first_name: name_1, last_name: Faker::Name.last_name, address: Faker::Address.full_address, phone_number: Faker::PhoneNumber.cell_phone, email:"#{name_1.downcase}@web.com", password:"123456")
+User.create(first_name: name_2, last_name: Faker::Name.last_name, address: Faker::Address.full_address, phone_number: Faker::PhoneNumber.cell_phone, email:"#{name_2.downcase}@web.com", password:"123456")
 
-2.times do
-  n = Faker::Name.first_name
-  cn = Faker::Company.name
-  User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, address: Faker::Address.full_address, phone_number: Faker::PhoneNumber.cell_phone, email:"#{n.downcase}@web.com", password:"123456", company: true, company_name: cn, website: "www.#{cn}.com")
-end
+
+name_3 = 'Felix'
+name_4 = 'Katell'
+cn1 = 'Google'
+cn2 = 'Facebook'
+User.create(first_name: name_3, last_name: Faker::Name.last_name, address: Faker::Address.full_address, phone_number: Faker::PhoneNumber.cell_phone, email:"#{name_3.downcase}@web.com", password:"123456", company: true, company_name: cn1, website: "www.#{cn1.downcase}.com")
+User.create(first_name: name_4, last_name: Faker::Name.last_name, address: Faker::Address.full_address, phone_number: Faker::PhoneNumber.cell_phone, email:"#{name_4.downcase}@web.com", password:"123456", company: true, company_name: cn2, website: "www.#{cn2.downcase}.com")
 
 cat.each do |c|
   Category.create(name: c)
