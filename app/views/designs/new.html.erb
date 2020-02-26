@@ -1,18 +1,23 @@
 <h1>Add a new design</h1>
 
-<div>
+<div class="form-container">
   <%= simple_form_for @design do |f| %>
   <%= f.input :name %>
   <%= f.input :photo %>
   <p>File resolution: 300 dpi</p>
-  <%= f.input :file_type, as: :radio_buttons, collection: %w(psd ai) %>
-  <%= f.input :layers, as: :radio_buttons %>
-  <%= f.input :pattern, as: :radio_buttons, collection: ['seamless tile', 'placement'] %>
   <%= f.input :price %>
-  <%= f.input :indexed_colors, as: :radio_buttons %>
+  <div class="file-info">
+    <h2>Files information</h2>
+    <div class="files-grid">
+      <%= f.input :file_type, as: :radio_buttons, collection: %w(psd ai) %>
+      <%= f.input :layers, as: :radio_buttons %>
+      <%= f.input :pattern, as: :radio_buttons, collection: ['seamless tile', 'placement'] %>
+      <%= f.input :indexed_colors, as: :radio_buttons %>
+    </div>
+  </div>
   <%= f.association :categories, as: :check_boxes %>
   <%= f.association :tags, as: :check_boxes %>
-  <%= f.submit "add a new design", class: "btn btn-primary" %>
+  <%= f.submit "add a new design", class: "button" %>
 <% end %>
 </div>
 
