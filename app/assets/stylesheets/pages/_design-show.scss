@@ -52,3 +52,10 @@
 .compart {
   margin: 12px 0;
 }
+
+.categorie_btn {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 50px;
+  border-top: solid 1px rgb(220, 220, 220);
+}

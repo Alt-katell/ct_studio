@@ -20,3 +20,12 @@ body {
   // margin-bottom: 120px;
 }
 
+a {
+  color: $gray;
+
+  &:hover {
+    text-decoration: none;
+    color: $gray;
+  }
+}
+
