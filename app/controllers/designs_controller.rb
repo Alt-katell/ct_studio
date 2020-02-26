@@ -26,6 +26,7 @@ class DesignsController < ApplicationController
   def update
     @design = Design.find(params[:id])
     @design.update(design_params)
+    redirect_to design_path(@design)
   end
 
   def destroy
