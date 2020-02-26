@@ -1,5 +1,7 @@
-<h1><strong>Thank you for your purchase!</strong></h1>
-<p>Here is a summary of the design you just purchase</p>
+<div class="category_show_title  m-0 p-0 text-dark">
+  <h1><strong>Thank you for your purchase!</strong></h1>
+  <p>Here is a summary of the design you just purchase</p>
+</div>
 <div class="container">
   <div class="design_card">
     <div class="design_img">
@@ -33,10 +35,5 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="categorie_btn">
-    <% @design.categories.each do |cat| %>
-      <%= link_to "Designs of #{cat.name} categorie", category_path(cat), class: 'button mb-6' %>
-    <% end %>
   </div>
 </div>
