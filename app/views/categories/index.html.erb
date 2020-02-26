@@ -1,11 +1,8 @@
-  <div class="my-container">
-    <% @categories.each do |c| %>
-      <%= link_to(category_path(c.id), class: 'cat-card') do %>
-        <img src="<%= image_url "ctstudio-#{c.name.upcase}.jpg" %>" alt="cat image">
-        <h5><%= c.name %></h5>
-      <% end %>
+<div class="my-container">
+  <% @categories.each do |c| %>
+    <%= link_to(category_path(c.id), class: 'cat-card') do %>
+      <img src="<%= image_url "ctstudio-#{c.name.upcase}.jpg" %>" alt="cat image">
+      <h5><%= c.name %></h5>
     <% end %>
-  </div>
-
-  <%= link_to 'sign out', destroy_user_session_path, method: :delete %>
-
+  <% end %>
+</div>
