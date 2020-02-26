@@ -5,6 +5,8 @@
     <p>Undefinable styles to make a unique statement.</p>
   </div>
 
+  <div class="backlink"><%= link_to "> Back to category list", categories_path %></div>
+
   <div class="search">
     <div class="search_keyword">
       <p><strong>Search by keyword</strong></p>
@@ -32,7 +34,6 @@
         <div class="info d-flex justify-content-between">
           <div class="tit">
             <h5><%= d.name %></h5>
-            <p>Created at: <%= d.created_at.strftime("%Y-%m-%d") %></p>
           </div>
           <div class="price">
             <h5><%= d.price %>$</h5>
@@ -42,4 +43,3 @@
     <% } %>
   <% end %>
 </div>
-<%= link_to "Back to category list", categories_path %>
