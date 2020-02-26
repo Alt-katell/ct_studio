@@ -32,7 +32,7 @@
       </div>
       <% if current_user.company %>
         <div class="btn_compart">
-          <%= render "purchases/new", user: @user, design: @design, purchase: @purchase %>
+          <%= link_to "Buy", design_purchases_path(@design), method: :post, class: "button" %>
         </div>
       <% else %>
         <% if @design.user == current_user %>
