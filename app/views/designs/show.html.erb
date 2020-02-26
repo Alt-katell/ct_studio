@@ -63,12 +63,11 @@
             </div>
           </div>
         </div>
-
       <% else %>
         <% if @design.user == current_user %>
           <div class="btn_compart">
             <%= link_to "Update your design", edit_design_path(@design), class: "button mr-3" %>
-            <%= link_to "Delete your design",  design_path(@design), method: :delete, data: { confirm: "Delete #{@design.name}?" } %>
+            <%= link_to "Delete your design",  categories_path, class: 'button', method: :delete, data: { confirm: "Delete #{@design.name}?" } %>
           </div>
         <% end %>
       <% end %>
