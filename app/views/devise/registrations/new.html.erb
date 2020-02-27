@@ -1,4 +1,4 @@
-<div class="sign-in-main-container" style="background-image: url(<%= image_url "ctstudio_sign_in_low_quality.jpg"  %>)">
+<div class="sign-up-main-container" style="background-image: url(<%= image_url "ctstudio_sign_in_low_quality.jpg"  %>)">
   <div class="sign-in-info">
     <div class="category_show_title">
       <img src="<%= image_url "ctstudio_logo_white.png" %>" width="" alt="logo">
@@ -6,10 +6,7 @@
     </div>
   </div>
 
-  <div class="sign-in-container">
-    <div class="title">
-      <h2>Sign up</h2>
-    </div>
+  <div class="sign-up-container">
     <div class="form-style">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
