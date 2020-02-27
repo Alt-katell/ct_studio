@@ -37,8 +37,15 @@
               <div class="tit">
                 <h5><%= d.name %></h5>
               </div>
-              <div class="price">
-                <h5><%= d.price %>$</h5>
+              <div class="flex-part">
+                <div class="price">
+                  <h5><%= d.price %>$</h5>
+                </div>
+                <% if current_user == d.user  %>
+                  <div class="sold">
+                      <i class="fas fa-star" style="color:black"></i>
+                  </div>
+                <% end %>
               </div>
             </div>
           </div>

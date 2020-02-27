@@ -62,3 +62,12 @@
   background-color: white;
 
 }
+
+.flex-part {
+  display: flex;
+
+  i {
+    margin-left: 10px;
+    margin-bottom: 8px;
+  }
+}
