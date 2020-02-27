@@ -63,11 +63,16 @@
   }
 
   i {
-
     padding-left: 8px;
-
   }
+}
 
+.dropdown-menu {
+  a:hover {
+    background: none;
+    border-bottom: none;
+    font-weight: bolder;
+  }
 }
 
 
