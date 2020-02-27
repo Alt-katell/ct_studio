@@ -1,7 +1,6 @@
 class DesignsController < ApplicationController
   before_action :authenticate_user!
-  add_breadcrumb "Home", :root_path
-  add_breadcrumb "Categories", :category_path
+
 
   def show
     @design = Design.find(params[:id])
