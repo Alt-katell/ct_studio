@@ -1,9 +1,14 @@
 class DesignsController < ApplicationController
   before_action :authenticate_user!
 
-
   def show
     @design = Design.find(params[:id])
+    @category = Category.find_by({name: params[:category]})
+    add_breadcrumb "Categories", :categories_path
+    if @category
+    add_breadcrumb @category.name, category_path(@category)
+    end
+    add_breadcrumb @design.name, design_path(@design)
   end
 
   def new
