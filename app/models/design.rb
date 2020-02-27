@@ -15,4 +15,14 @@ class Design < ApplicationRecord
   validates :tags, presence: true, length: {minimum: 1, maximum: 5, message: "Please choose between 1 and 5 tags"}
   validates :categories, presence: true, length: {minimum: 1, maximum: 3, message: "Please choose between 1 and 3 caategories"}
 
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [ :name, :file_type, :pattern ],
+    associated_against: {
+      tags: :name
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
+
 end

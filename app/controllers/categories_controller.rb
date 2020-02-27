@@ -6,9 +6,16 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
-    add_breadcrumb "Categories", :categories_path
-    add_breadcrumb @category.name, category_path(@category)
-    @designs = @category.designs
+    if params[:query]
+      @designs = Design.search(params[:query])
+
+    else
+      @category = Category.find(params[:id])
+      @designs = @category.designs
+
+
+    # add_breadcrumb "Categories", :categories_path
+    # add_breadcrumb @category.name, category_path(@category)
+    end
   end
 end
