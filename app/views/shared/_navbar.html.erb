@@ -11,7 +11,7 @@
     <% end %>
     <%= link_to 'Designers', designers_path %>
     <% if current_user.company %>
-      <%= link_to 'My design purshases', categories_path %>
+      <%= link_to 'My design purshases', my_purchase_history_path %>
     <% else %>
       <%= link_to 'My designs', my_designs_path %>
     <% end %>

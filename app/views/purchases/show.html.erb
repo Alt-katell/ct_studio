@@ -15,7 +15,7 @@
       <div class="design_info">
         <div class="compart">
           <p>Designer : <%= @design.user.first_name %> <%= @design.user.last_name %></p>
-          <p>Layers : <%= @design.layers %></p>
+          <p>Layers : <%= @design.layers ? 'Yes' : 'No' %></p>
         </div>
         <div class="compart">
           <p>File resolution: 300 dpi</p>
@@ -35,5 +35,9 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="d-flex justify-content-between">
+    <%= link_to 'Back to categories', categories_path, class: 'button' %>
+    <%= link_to 'My purchases', my_purchase_history_path, class: 'button' %>
   </div>
 </div>
