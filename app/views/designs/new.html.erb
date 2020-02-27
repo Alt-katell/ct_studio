@@ -1,12 +1,15 @@
-<h1>Add a new design</h1>
 
-<div class="form-container">
+<div class="category_show_title">
+  <h2><strong>Add a new design</strong></h2>
+  <p>Thank you for exposing your design</p>
+</div>
+
+<div class="container">
   <%= simple_form_for @design do |f| %>
-  <%= f.input :name %>
-  <%= f.input :photo %>
-  <p>File resolution: 300 dpi</p>
-  <%= f.input :price %>
-  <div class="file-info">
+    <%= f.input :name, class: "search-bar", placeholder: "Name of your design" %>
+    <%= f.input :photo %>
+    <p>File resolution: 300 dpi</p>
+    <%= f.input :price, class: "search-bar", placeholder: "Name of your design"%>
     <h2>Files information</h2>
     <div class="files-grid">
       <%= f.input :file_type, as: :radio_buttons, collection: %w(psd ai) %>
@@ -14,11 +17,27 @@
       <%= f.input :pattern, as: :radio_buttons, collection: ['seamless tile', 'placement'] %>
       <%= f.input :indexed_colors, as: :radio_buttons %>
     </div>
-  </div>
-  <%= f.association :categories, as: :check_boxes %>
-  <%= f.association :tags, as: :check_boxes %>
-  <%= f.submit "add a new design", class: "button" %>
-<% end %>
+    <h2>Categories</h2>
+    <div class="category-choices">
+      <% Category.all.each do |category| %>
+        <input type="checkbox" class="hidden" value="<%= category.id %>" name="design[category_ids][]" id="design_category_ids_<%= category.id %>">
+        <label for="design_category_ids_<%= category.id %>">
+          <%= category.name %>
+        </label>
+      <% end %>
+    </div>
+    <h2>Tags</h2>
+    <div class="category-choices">
+      <% Tag.all.each do |tag| %>
+        <input type="checkbox" class="hidden" value="<%= tag.id %>" name="design[tag_ids][]" id="design_tag_ids_<%= tag.id %>">
+        <label for="design_tag_ids_<%= tag.id %>">
+          <%= tag.name %>
+        </label>
+      <% end %>
+    </div>
+
+    <%= f.submit "add a new design", class: "button" %>
+  <% end %>
 </div>
 
 
