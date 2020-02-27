@@ -14,9 +14,9 @@
       <%= render 'shared/navbar' %>
     <% end %>
     <div class="content-container">
+      <%= render_breadcrumbs :separator => ' > '%>
       <%= yield %>
     </div>
-    <div class="fff">
       <%= render 'shared/footer' %>
     </div>
 
