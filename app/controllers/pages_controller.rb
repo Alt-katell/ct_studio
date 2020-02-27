@@ -1,8 +1,9 @@
 class PagesController < ApplicationController
   before_action :authenticate_user!
 
-  def my_designs
-    @designs = current_user.designs
+  def designer_designs
+    @designer = User.find(params[:id])
+    @designs = @designer.designs
   end
 
   def my_purchase_history
