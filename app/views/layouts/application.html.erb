@@ -3,22 +3,25 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <title>ct studio</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <% unless current_user.nil? %>
+    <% if current_user.nil? %>
+        <%= yield %>
+    <% else %>
       <%= render 'shared/navbar' %>
-    <% end %>
-    <div class="content-container">
-      <%= render_breadcrumbs :separator => ' > ' %>
-      <%= yield %>
-    </div>
-    <%= render 'shared/footer' %>
 
+      <div class="content-container">
+        <%= render_breadcrumbs :separator => ' > ' %>
+        <%= yield %>
+      </div>
+
+      <%= render 'shared/footer' %>
+    <% end %>
     <%= javascript_include_tag 'application' %>
 
     <%= javascript_pack_tag 'application' %>
