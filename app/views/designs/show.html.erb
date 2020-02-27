@@ -1,82 +1,80 @@
-<div class="container">
-  <div class="design_card">
-    <div class="design_img">
-      <%= cl_image_tag @design.photo.key %>
+<div class="design_card">
+  <div class="design_img">
+    <%= cl_image_tag @design.photo.key %>
+  </div>
+  <div class="informations">
+    <div class="design_title">
+      <h1><%= @design.name %></h1>
+      <h2>$ <%= @design.price %></h2>
     </div>
-    <div class="informations">
-      <div class="design_title">
-        <h1><%= @design.name %></h1>
-        <h2>$ <%= @design.price %></h2>
+    <div class="design_info">
+      <div class="compart">
+        <p>Designer : <%= @design.user.first_name %> <%= @design.user.last_name %></p>
+        <p>Layers : <%= @design.layers ? 'Yes' : 'No' %></p>
       </div>
-      <div class="design_info">
-        <div class="compart">
-          <p>Designer : <%= @design.user.first_name %> <%= @design.user.last_name %></p>
-          <p>Layers : <%= @design.layers ? 'Yes' : 'No' %></p>
-        </div>
-        <div class="compart">
-          <p>File resolution: 300 dpi</p>
-          <p>Fyle type : <%= @design.file_type %></p>
-        </div>
-        <div class="compart">
-          <p>Categories : <% @design.categories.each do |cat| %>
-              <%= cat.name  %>
-            <% end %>
-          </p>
-          <p>
-            Keywords : <% @design.tags.each do |tag| %>
-              <%= tag.name  %>
-            <% end %>
-          </p>
-          <p>Created at: <%= @design.created_at.strftime("%Y-%m-%d") %></p>
-        </div>
+      <div class="compart">
+        <p>File resolution: 300 dpi</p>
+        <p>Fyle type : <%= @design.file_type %></p>
       </div>
-      <% if current_user.company %>
-        <!-- Button trigger modal -->
-        <button type="button" class="button" data-toggle="modal" data-target="#exampleModalCenter">
-          <h5><strong>Buy</strong></h5>
-        </button>
+      <div class="compart">
+        <p>Categories : <% @design.categories.each do |cat| %>
+            <%= cat.name  %>
+          <% end %>
+        </p>
+        <p>
+          Keywords : <% @design.tags.each do |tag| %>
+            <%= tag.name  %>
+          <% end %>
+        </p>
+        <p>Created at: <%= @design.created_at.strftime("%Y-%m-%d") %></p>
+      </div>
+    </div>
+    <% if current_user.company %>
+      <!-- Button trigger modal -->
+      <button type="button" class="button" data-toggle="modal" data-target="#exampleModalCenter">
+        <h5><strong>Buy</strong></h5>
+      </button>
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Purchase confirmation</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body text-center">
-                This is your payment confirmation! <br>
-                Please read carefully all the details of your purchase: <br> <br>
-                Name: <strong><%= @design.name %></strong> <br>
-                Price: <strong>$<%= @design.price %></strong> <br>
-                Designer: <strong><%= @design.user.first_name %></strong> <br>
-                Layers: <strong><%= @design.layers %></strong> <br>
-                File Type: <strong><%= @design.file_type %></strong> <br> <br> <br>
-                <%= cl_image_tag @design.photo.key, class: 'small-img' %>
-              </div>
-              <div class="modal-footer">
-                <%= link_to "Pay", design_purchases_path(@design), method: :post, class: "button" %>
-                <button type="button" class="button" data-dismiss="modal">Close</button>
-              </div>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Purchase confirmation</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body text-center">
+              This is your payment confirmation! <br>
+              Please read carefully all the details of your purchase: <br> <br>
+              Name: <strong><%= @design.name %></strong> <br>
+              Price: <strong>$<%= @design.price %></strong> <br>
+              Designer: <strong><%= @design.user.first_name %></strong> <br>
+              Layers: <strong><%= @design.layers %></strong> <br>
+              File Type: <strong><%= @design.file_type %></strong> <br> <br> <br>
+              <%= cl_image_tag @design.photo.key, class: 'small-img' %>
+            </div>
+            <div class="modal-footer">
+              <%= link_to "Pay", design_purchases_path(@design), method: :post, class: "button" %>
+              <button type="button" class="button" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
-      <% else %>
-        <% if @design.user == current_user %>
-          <div class="btn_compart">
-            <%= link_to "Update your design", edit_design_path(@design), class: "button mr-3" %>
-            <%= link_to "Delete your design",  design_path(@design), method: :delete, class: 'button', data: { confirm: "Delete #{@design.name}?" } %>
-          </div>
-        <% end %>
-      <% end %>
       </div>
-    </div>
-    <div class="categorie_btn">
-      <% @design.categories.each do |cat| %>
-        <%= link_to "Designs of #{cat.name} categorie", category_path(cat), class: 'button mb-6' %>
+    <% else %>
+      <% if @design.user == current_user %>
+        <div class="btn_compart">
+          <%= link_to "Update your design", edit_design_path(@design), class: "button mr-3" %>
+          <%= link_to "Delete your design",  design_path(@design), method: :delete, class: 'button', data: { confirm: "Delete #{@design.name}?" } %>
+        </div>
       <% end %>
+    <% end %>
     </div>
+  </div>
+  <div class="categorie_btn">
+    <% @design.categories.each do |cat| %>
+      <%= link_to "Designs of #{cat.name} categorie", category_path(cat), class: 'button mb-6' %>
+    <% end %>
   </div>
 </div>
