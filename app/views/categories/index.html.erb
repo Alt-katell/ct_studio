@@ -8,7 +8,7 @@
 
 <div class="my-container">
   <% @categories.each do |c| %>
-    <%= link_to(category_path(c.id), class: 'cat-card') do %>
+    <%= link_to(category_path(c.id), class: 'category-card') do %>
       <img src="<%= image_url "ctstudio-#{c.name.upcase}.jpg" %>" alt="cat image">
       <h5><%= c.name %></h5>
     <% end %>
