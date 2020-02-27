@@ -34,7 +34,7 @@
 
 <% sold_designs = @designs.select { |design| design.sold } %>
 
-<% unless current_user.company %>
+<% if current_user == @designer %>
   <% unless sold_designs.nil? || sold_designs.empty? %>
     <div>
       <h1 class="sold-subtitle">Already sold</h1>
