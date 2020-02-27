@@ -1,18 +1,18 @@
-<div class="container">
-  <div class="category_show_title text-dark">
-    <h1><strong>My purchase history</strong></h1>
-  </div>
-  <div class="medium-list-container">
-    <% @purchases.each do |purchase| %>
-      <%= link_to(design_purchase_path(purchase.design, purchase)) { %>
-        <div class="d-flex justify-content-between purchase-card">
-          <div class="name-price text-dark">
-            <h4><strong><%= purchase.design.name %></strong></h4>
-            <p><%= purchase.design.price %></p>
-          </div>
-          <h4><%= purchase.created_at.strftime('%Y-%m-%d at %H:%M') %></h4>
+<div class="category_show_title text-dark">
+  <h1><strong>My purchase history</strong></h1>
+</div>
+
+
+<div class="medium-list-container">
+  <% @purchases.each do |purchase| %>
+    <%= link_to(design_purchase_path(purchase.design, purchase)) { %>
+      <div class="d-flex justify-content-between purchase-card">
+        <div class="name-price text-dark">
+          <h4><strong><%= purchase.design.name %></strong></h4>
+          <p><%= purchase.design.price %></p>
         </div>
-      <% } %>
-    <% end %>
-  </div>
+        <h4><%= purchase.created_at.strftime('%Y-%m-%d at %H:%M') %></h4>
+      </div>
+    <% } %>
+  <% end %>
 </div>
