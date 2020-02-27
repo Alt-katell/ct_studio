@@ -89,3 +89,46 @@
 
 }
 
+// Style for the designer card in designers.html.erb file
+.designer-card {
+
+  border-right: solid 2px black;
+  align-items: center;
+  display: flex;
+
+  img {
+
+    object-fit: cover;
+    height: 100%;
+    width: 80px;
+
+  }
+
+  .designer-card-info {
+
+    padding: 20px;
+
+  }
+
+  &:hover {
+
+    box-shadow: 0 0 2px 0 $gray;
+    background: black;
+    cursor: pointer;
+    transition: 1s;
+    color: white;
+
+  }
+
+  p {
+
+    margin: 0;
+
+  }
+
+  &:hover p {
+
+    font-weight: bolder;
+
+  }
+}

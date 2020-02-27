@@ -1,20 +1,42 @@
-.main-container {
+// Container to add some margin to the footer.
+// Made because problem with the position of the footer,
+// it didn't stayed at the bottom
+.for-footer-container {
+
   margin-bottom: 200px;
+
 }
 
-.my-container {
-  width: 1200px;
-  margin: 0 auto;
+// Grid container for the designers list
+.grid-designers {
+
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
   display: grid;
+
+}
+
+// Grid container for the categories and design cards
+.grid-container {
+
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 32px 64px;
+  margin: 0 auto;
+  width: 1200px;
+  display: grid;
+
 }
 
-.medium-container {
+// Container to display the list of purchases. Made smaller
+// container to not mess with .container class of bootstrap
+.medium-list-container {
+
   width: 800px;
   margin: 0 auto;
+
 }
 
+// Container for the forms
 .form-container {
   width: 1200px;
   margin: 32px auto;
@@ -44,6 +66,8 @@
 
 
 }
+
+
 
 input .form-check {
   display: inline-block;

@@ -1,22 +1,33 @@
+// No uunderline in links
 a {
+
   text-decoration: none;
+
+// No uunderline when hover links
 }
 
 a:hover {
+
   text-decoration: none;
+
 }
 
+//Style for black buttons
 .button {
-  padding: 12px 20px;
-  color: white;
-  background: black;
+
   border: solid 2px black;
+  padding: 12px 20px;
+  background: black;
+  color: white;
+
 }
 
 .button:hover {
-    color:black;
-    background:white;
+
     border: solid 2px black;
+    background:white;
     transition: 0.3s;
+    color:black;
+
 }
 

@@ -6,7 +6,7 @@
   </p>
 </div>
 
-<div class="my-container">
+<div class="grid-container">
   <% @categories.each do |c| %>
     <%= link_to(category_path(c.id), class: 'category-card') do %>
       <img src="<%= image_url "ctstudio-#{c.name.upcase}.jpg" %>" alt="cat image">
