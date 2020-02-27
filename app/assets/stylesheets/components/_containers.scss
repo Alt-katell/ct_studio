@@ -81,11 +81,6 @@
     margin: 8px 0;
   }
 
-  .files-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-
   .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
     color: $gray;
   }
