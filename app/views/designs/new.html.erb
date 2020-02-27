@@ -34,7 +34,7 @@
         <div class="category-choices">
           <% Category.all.each do |category| %>
             <div>
-              <input type="checkbox" class="hidden" value="<%= category.id %>" name="design[category_ids][]" id="design_category_ids_<%= category.id %>">
+              <input type="checkbox" class="d-none" value="<%= category.id %>" name="design[category_ids][]" id="design_category_ids_<%= category.id %>">
               <label for="design_category_ids_<%= category.id %>">
                 <%= category.name %>
               </label>
