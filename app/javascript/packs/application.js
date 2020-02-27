@@ -1,4 +1,7 @@
 import "bootstrap";
 
 import { loadDynamicBannerText } from '../components/banner';
-loadDynamicBannerText();
+// loadDynamicBannerText();
+
+window.loadDynamicBannerText = loadDynamicBannerText;
+window.loadDynamicBannerText();
