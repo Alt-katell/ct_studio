@@ -1,26 +1,24 @@
-<div class="container">
-  <div class="category_show_title">
-    <h2><strong>All designs of a category</strong></h2>
-    <p>Textures, shapes and colors</p>
-    <p>Undefinable styles to make a unique statement.</p>
+<div class="category_show_title">
+  <h2><strong>All designs of a category</strong></h2>
+  <p>Textures, shapes and colors</p>
+  <p>Undefinable styles to make a unique statement.</p>
+</div>
+
+<div class="backlink"><%= link_to "> Back to category list", categories_path %></div>
+
+<div class="search">
+  <div class="search_keyword">
+    <p><strong>Search by keyword</strong></p>
+    <input class="search-bar" type="text" placeholder="Search designs">
   </div>
 
-  <div class="backlink"><%= link_to "> Back to category list", categories_path %></div>
-
-  <div class="search">
-    <div class="search_keyword">
-      <p><strong>Search by keyword</strong></p>
-      <input class="search-bar" type="text" placeholder="Search designs">
-    </div>
-
-    <div class="search_colors">
-      <p><strong>Search by color</strong></p>
-      <div class="colors_btn">
-        <% colors = ['red', 'yellow', 'blue', 'green', 'pink', 'black'] %>
-        <% colors.each do |color| %>
-          <i class="fas fa-circle" style="color: <%= color %>"></i>
-        <% end %>
-      </div>
+  <div class="search_colors">
+    <p><strong>Search by color</strong></p>
+    <div class="colors_btn">
+      <% colors = ['red', 'yellow', 'blue', 'green', 'pink', 'black'] %>
+      <% colors.each do |color| %>
+        <i class="fas fa-circle" style="color: <%= color %>"></i>
+      <% end %>
     </div>
   </div>
 </div>
@@ -43,4 +41,8 @@
         <% } %>
       <% end %>
   <% end %>
+</div>
+
+<div class="sold-subtitle">
+  <h1>Already sold</h1>
 </div>

@@ -11,19 +11,18 @@
 </div>
 
 <div class="grid-container">
-  <% @designs.each do |d| %>
-  <%= link_to(design_path(d.id)) { %>
-      <div class="design-card">
-        <div class ="design-img" style="background-image: url('<%= cl_image_path d.photo.key %>')"></div>
-        <div class="design-info d-flex justify-content-between">
-          <div class="tit">
-            <h5><%= d.name %></h5>
-          </div>
-          <div class="price">
-            <h5><%= d.price %>$</h5>
-          </div>
+<% @designs.each do |d| %>
+<%= link_to(design_path(d.id)) { %>
+    <div class="design-card">
+      <div class ="design-img" style="background-image: url('<%= cl_image_path d.photo.key %>')"></div>
+      <div class="design-info d-flex justify-content-between">
+        <div class="tit">
+          <h5><%= d.name %></h5>
+        </div>
+        <div class="price">
+          <h5><%= d.price %>$</h5>
         </div>
       </div>
-    <% } %>
-  <% end %>
-</div>
+    </div>
+  <% } %>
+<% end %>

@@ -1,0 +1,55 @@
+ .files-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+.form-style {
+  padding: 50px;
+
+  h4 {
+    color: black;
+    margin-bottom: 20px;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .form_parts {
+    margin-bottom: 2em;
+    padding-bottom: 2em;
+    border-bottom: solid 1px $light-gray;
+  }
+}
+
+.category-choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.category-choice {
+  background: #b7b7b7;
+  padding: 20px;
+  border-radius: 5px;
+  opacity: .4;
+  flex: 0 0 30%;
+  text-align: center;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+  &.active {
+  background: $gray;
+  color: white;
+  opacity: 1;
+  }
+}
+
+#login-btns {
+  margin: 20px 0;
+}
+
+.cancel-part {
+  margin-top: 50px;
+}

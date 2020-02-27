@@ -1,6 +1,7 @@
 class DesignsController < ApplicationController
   before_action :authenticate_user!
 
+
   def show
     @design = Design.find(params[:id])
   end

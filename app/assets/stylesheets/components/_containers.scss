@@ -1,15 +1,12 @@
 // Container to add some margin to the footer.
 // Made because problem with the position of the footer,
 // it didn't stayed at the bottom
-.for-footer-container {
+.content-container {
 
+  width: 70%;
+  margin: 0 auto;
   margin-bottom: 450px;
-
-  &:focus {
-
-    outline: none;
-
-  }
+  width: 70%;
 
 }
 
@@ -57,7 +54,7 @@
 
   margin: 0 auto;
 
-  width: 1200px;
+  // width: 1200px;
 
 }
 
@@ -82,11 +79,6 @@
     border-top: 1px solid $light-gray;
     border-bottom: 1px solid $light-gray;
     margin: 8px 0;
-  }
-
-  .files-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
   .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {

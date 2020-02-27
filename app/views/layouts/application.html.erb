@@ -13,10 +13,11 @@
     <% unless current_user.nil? %>
       <%= render 'shared/navbar' %>
     <% end %>
-    <div class="for-footer-container">
+    <div class="content-container">
       <%= yield %>
     </div>
-    <%= render 'shared/footer' %>
+      <%= render 'shared/footer' %>
+    </div>
 
     <%= javascript_include_tag 'application' %>
 

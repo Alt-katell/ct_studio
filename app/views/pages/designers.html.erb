@@ -1,20 +1,19 @@
-<div class="container">
-  <div class="category_show_title">
-    <h2><strong>Descover our talented designers</strong></h2>
-    <p><span id="banner-typed-text"></span></p>
-  </div>
-
-  <div class="grid-designers">
-    <% @designers.each do |designer| %>
-      <%= link_to designer_designs_path(designer.id) do %>
-        <div class="designer-card">
-          <img src="https://mvpautotitleloan.com/wp-content/uploads/2019/05/generic-male-avatar-300x284.jpg" />
-          <div class="designer-card-info">
-            <p><%= designer.first_name %> <%= designer.last_name %></p>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
+<div class="category_show_title">
+  <h2><strong>Descover our talented designers</strong></h2>
+  <p><span id="banner-typed-text"></span></p>
 </div>
+
+<div class="grid-designers">
+  <% @designers.each do |designer| %>
+    <%= link_to designer_designs_path(designer.id) do %>
+      <div class="designer-card">
+        <img src="https://mvpautotitleloan.com/wp-content/uploads/2019/05/generic-male-avatar-300x284.jpg" />
+        <div class="designer-card-info">
+          <p><%= designer.first_name %> <%= designer.last_name %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
 
