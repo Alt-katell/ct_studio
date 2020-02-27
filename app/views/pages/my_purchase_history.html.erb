@@ -2,7 +2,7 @@
   <div class="category_show_title text-dark">
     <h1><strong>My purchase history</strong></h1>
   </div>
-  <div class="medium-container">
+  <div class="medium-list-container">
     <% @purchases.each do |purchase| %>
       <%= link_to(design_purchase_path(purchase.design, purchase)) { %>
         <div class="d-flex justify-content-between purchase-card">
