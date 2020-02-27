@@ -35,6 +35,9 @@ class DesignsController < ApplicationController
     redirect_to my_designs_path(current_user)
   end
 
+
+
+
   private
 
   def design_params
