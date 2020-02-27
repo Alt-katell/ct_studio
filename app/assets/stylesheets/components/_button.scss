@@ -16,7 +16,9 @@ a:hover {
 .button {
 
   border: solid 2px black;
+
   padding: 12px 20px;
+
   background: black;
   color: white;
 
@@ -25,8 +27,10 @@ a:hover {
 .button:hover {
 
     border: solid 2px black;
-    background:white;
+
     transition: 0.3s;
+
+    background:white;
     color:black;
 
 }

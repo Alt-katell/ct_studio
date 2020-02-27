@@ -1,6 +1,11 @@
-#search-bar {
-  border-radius: 4px;
-  padding: 8px 24px;
+// Style for the search bar
+.search-bar {
+
   border: 1px solid $gray;
+  border-radius: 4px;
+
+  padding: 8px 24px;
+
   width: 400px;
+
 }

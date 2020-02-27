@@ -22,8 +22,10 @@
   h5 {
 
     text-align: center;
+
     font-weight: 700;
     font-size: 20px;
+
     padding: 24px;
 
   }
@@ -43,8 +45,9 @@
 
   p {
 
-    margin-top: 16px;
     font-size: 12px;
+
+    margin-top: 16px;
     margin: 0;
 
   }
@@ -52,17 +55,19 @@
   h5 {
 
     font-family: $headers-font;
-    color: $dark-gray;
     font-weight: 700;
     font-size: 16px;
+
+    color: $dark-gray;
 
   }
 
   .design-img {
 
-    height: 220px;
-    background-size: cover;
     background-position: center;
+    background-size: cover;
+
+    height: 220px;
   }
 
   .design-info {
@@ -76,9 +81,9 @@
 // Style for the purchase card in views/pages/my_purchases.html.erb file
 .purchase-card {
 
+  border: 1px solid $light-gray;
   padding: 24px  32px;
   transition: 0.2s;
-  border: 1px solid $light-gray;
 
   &:hover {
 
@@ -93,8 +98,9 @@
 .designer-card {
 
   border-right: solid 2px black;
-  align-items: center;
+
   display: flex;
+  align-items: center;
 
   img {
 
@@ -113,11 +119,13 @@
   &:hover {
 
     box-shadow: 0 0 2px 0 $gray;
+
     background: black;
-    cursor: pointer;
-    transition: 1s;
     color: white;
 
+    cursor: pointer;
+
+    transition: 1s;
   }
 
   p {
