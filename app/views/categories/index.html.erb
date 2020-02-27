@@ -9,8 +9,10 @@
 <div class="grid-container">
   <% @categories.each do |c| %>
     <%= link_to(category_path(c.id), class: 'category-card') do %>
+    <div class="category-img-box">
       <img src="<%= image_url "ctstudio-#{c.name.upcase}.jpg" %>" alt="cat image">
-      <h5><%= c.name %></h5>
+    </div>
+    <h5><%= c.name %></h5>
     <% end %>
   <% end %>
 </div>
