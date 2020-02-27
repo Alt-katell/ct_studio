@@ -3,9 +3,30 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
+.form-style {
+  border: solid 1px black;
+  padding: 50px;
+
+  h4 {
+    color: black;
+    margin-bottom: 20px;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .form_parts {
+    margin-bottom: 2em;
+    padding-bottom: 2em;
+    border-bottom: solid 1px $light-gray;
+  }
+}
+
 .category-choices {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
 }
 
 .category-choice {
