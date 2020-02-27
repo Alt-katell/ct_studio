@@ -17,16 +17,16 @@ tags = %W(vintage sketch graphic arte photoshop marketing architect modern arqui
 
 name_1 = 'Santiago'
 name_2 = 'Vicky'
-User.create(first_name: name_1, last_name: Faker::Name.last_name, address: Faker::Address.full_address, phone_number: Faker::PhoneNumber.cell_phone, email:"#{name_1.downcase}@web.com", password:"123456")
-User.create(first_name: name_2, last_name: Faker::Name.last_name, address: Faker::Address.full_address, phone_number: Faker::PhoneNumber.cell_phone, email:"#{name_2.downcase}@web.com", password:"123456")
+User.create(first_name: name_1, last_name: Faker::Name.last_name, street_address: '5333 rue Casgrain', city: 'Montreal', state_province: 'Quebec', zip_code: 'H4G2M1', country: 'Canada', phone_number: Faker::PhoneNumber.cell_phone, email:"#{name_1.downcase}@web.com", password:"123456")
+User.create(first_name: name_2, last_name: Faker::Name.last_name, street_address: '7214 Clinton St', city: 'Toronto', state_province: 'Ontario', zip_code: 'Z5K3L9', country: 'Canada', phone_number: Faker::PhoneNumber.cell_phone, email:"#{name_2.downcase}@web.com", password:"123456")
 
 
 name_3 = 'Felix'
 name_4 = 'Katell'
 cn1 = 'Google'
 cn2 = 'Facebook'
-User.create(first_name: name_3, last_name: Faker::Name.last_name, address: Faker::Address.full_address, phone_number: Faker::PhoneNumber.cell_phone, email:"#{name_3.downcase}@web.com", password:"123456", company: true, company_name: cn1, website: "www.#{cn1.downcase}.com")
-User.create(first_name: name_4, last_name: Faker::Name.last_name, address: Faker::Address.full_address, phone_number: Faker::PhoneNumber.cell_phone, email:"#{name_4.downcase}@web.com", password:"123456", company: true, company_name: cn2, website: "www.#{cn2.downcase}.com")
+User.create(first_name: name_3, last_name: Faker::Name.last_name, street_address: '2130 rue Rachel', city: 'Montreal', state_province: 'Quebec', zip_code: 'J4G2M3', country: 'Canada', phone_number: Faker::PhoneNumber.cell_phone, email:"#{name_3.downcase}@web.com", password:"123456", company: true, company_name: cn1, website: "www.#{cn1.downcase}.com")
+User.create(first_name: name_4, last_name: Faker::Name.last_name, street_address: '5333 Greenfield Av', city: 'Vancouver', state_province: 'British Columbia', zip_code: 'V4G2N1', country: 'Canada', phone_number: Faker::PhoneNumber.cell_phone, email:"#{name_4.downcase}@web.com", password:"123456", company: true, company_name: cn2, website: "www.#{cn2.downcase}.com")
 
 cat.each do |c|
   Category.create(name: c)
