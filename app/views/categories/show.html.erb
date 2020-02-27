@@ -43,6 +43,25 @@
   <% end %>
 </div>
 
-<div class="sold-subtitle">
-  <h1>Already sold</h1>
-</div>
+<% sold_designs = @designs.select { |design| design.sold } %>
+
+<% unless sold_designs.nil? || sold_designs.empty? %>
+  <div>
+    <h1 class="sold-subtitle">Already sold</h1>
+    <div class="grid-container">
+      <% sold_designs.each do |sold_design| %>
+        <div class="design-card">
+          <div class ="design-img" style="background-image: url('<%= cl_image_path sold_design.photo.key %>')"></div>
+          <div class="design-info d-flex justify-content-between">
+            <div class="tit">
+              <h5><%= sold_design.name %></h5>
+            </div>
+            <div class="price">
+              <h5>Sold</h5>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
