@@ -1,6 +1,12 @@
 <div class="container">
   <div class="category_show_title">
-    <h2><strong><%= @designer.first_name %> <%= @designer.last_name %>'s designs</strong></h2>
+    <h2><strong>
+      <% if @designer == current_user %>
+        My designs
+      <% else %>
+      <%= @designer.first_name %> <%= @designer.last_name %>'s designs
+      <% end %>
+    </strong></h2>
   </div>
 </div>
 

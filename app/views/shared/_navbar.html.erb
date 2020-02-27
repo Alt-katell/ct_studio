@@ -20,7 +20,7 @@
     <% if current_user.company %>
       <%= link_to 'My design purshases', my_purchase_history_path %>
     <% else %>
-      <%= link_to 'My designs', my_designs_path %>
+      <%= link_to 'My designs', designer_designs_path(current_user) %>
     <% end %>
   </div>
 </nav>
