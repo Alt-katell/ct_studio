@@ -1,1 +1,20 @@
-<h1>All designers</h1>
+<div class="container">
+  <div class="category_show_title">
+    <h2><strong>Descover our talented designers</strong></h2>
+    <p>Find inspiration, Inspire.</p>
+  </div>
+
+  <div class="grid-class">
+    <% @designers.each do |designer| %>
+      <%= link_to categories_path do %>
+        <div class="designer-card">
+          <img src="https://mvpautotitleloan.com/wp-content/uploads/2019/05/generic-male-avatar-300x284.jpg" />
+          <div class="designer-card-info">
+            <p><%= designer.first_name %> <%= designer.last_name %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+

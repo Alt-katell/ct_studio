@@ -8,4 +8,8 @@ class PagesController < ApplicationController
   def my_purchase_history
     @purchases = current_user.purchases
   end
+
+  def designers
+    @designers = User.where({company: false})
+  end
 end

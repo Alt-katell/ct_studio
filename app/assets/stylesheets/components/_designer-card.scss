@@ -1,0 +1,33 @@
+.grid-class {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+}
+
+.designer-card {
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 100%;
+    width: 80px;
+    object-fit: cover;
+  }
+
+  .designer-card-info {
+    padding: 20px;
+  }
+
+  &:hover {
+    box-shadow: 0 0 2px 0 $gray;
+    cursor: pointer;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.designer-card:hover p {
+  font-weight: bolder;
+}
