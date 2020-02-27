@@ -13,23 +13,31 @@
 @import "pages/index";
 
 body {
+
   background-color: white;
   position: absolute;
   width: 100%;
   min-height: 100vh;
   // margin-bottom: 120px;
+
 }
 
 .small-img {
+
   width: 460px;
+
 }
 
 a {
+
   color: $gray;
 
   &:hover {
+
     text-decoration: none;
     color: $gray;
+
   }
+
 }
 
