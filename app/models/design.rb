@@ -12,8 +12,7 @@ class Design < ApplicationRecord
   validates :file_type, presence: true
   validates :pattern, presence: true, inclusion: { in: ["seamless tile", "placement"] }
   validates :price, presence: true
-  validates :tags, presence: true, length: {minimum: 1, maximum: 5, message: "Please choose between 1 and 5 tags"}
-  validates :tags, presence: true, length: {minimum: 1, maximum: 3, message: "Please choose at least one color"}, inclusion: { in: ["red", "yellow", "blue", "green", "pink", "black"] }
+  validates :tags, presence: true, length: {minimum: 1, maximum: 7, message: "Please choose between 1 and 5 tags"}
 
   validates :categories, presence: true, length: {minimum: 1, maximum: 3, message: "Please choose between 1 and 3 caategories"}
 

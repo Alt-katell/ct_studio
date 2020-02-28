@@ -28,7 +28,9 @@
     <div class="colors_btn">
       <% colors = ['red', 'yellow', 'blue', 'green', 'pink', 'black'] %>
       <% colors.each do |color| %>
-        <i class="fas fa-circle" style="color: <%= color %>"></i>
+        <a href="/categories/<%= @category.id %>?query=<%= color %>">
+          <i class="fas fa-circle" style="color: <%= color %>"></i>
+        </a>
       <% end %>
     </div>
   </div>

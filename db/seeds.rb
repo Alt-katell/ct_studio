@@ -62,6 +62,7 @@ end
   file = URI.open(url)
   d.photo.attach(io: file, filename: "#{n}.jpg", content_type: 'image/png')
   d.user = user_d
+  p d.valid?
   d.save
 end
 
