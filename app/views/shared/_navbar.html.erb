@@ -6,24 +6,34 @@
     <% end %>
   </div>
   <div class="navbar_links">
-    <div class="dropdown d-inline-block">
-      <div data-toggle="dropdown" class="span_link"><%= current_user.first_name %><i class="fas fa-angle-down"></i></div>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <%= link_to "My account", edit_user_registration_path, class: "dropdown-item" %>
-        <%= link_to "Log out", destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
+    <div class="upper-options">
+      <div class="dropdown d-inline-block">
+        <div data-toggle="dropdown" class="span_link"><%= current_user.first_name %><i class="fas fa-angle-down"></i></div>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to "My account", edit_user_registration_path, class: "dropdown-item" %>
+          <%= link_to "Log out", destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
+          <% if current_user.company %>
+            <%= link_to 'My design purshases', my_purchase_history_path, class: "dropdown-item" %>
+          <% else %>
+            <%= link_to 'My designs', designer_designs_path(current_user), class: "dropdown-item" %>
+          <% end %>
+        </div>
       </div>
-    </div>
-    <% unless current_user.company %>
-      <%= link_to 'Add a new design', new_design_path %>
-    <% end %>
-    <%= link_to 'Designers', designers_path %>
-    <% if current_user.company %>
-      <%= link_to 'My design purshases', my_purchase_history_path %>
-      <% unless current_user.purchases.empty? %>
-        <span class="purshase_number"><%= current_user.purchases.count %></span>
+      <i class="text-dark fas fa-search"></i>
+      <%= form_tag search_results_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "global-search",
+          placeholder: 'Search',
+          autocomplete: 'off'
+        %>
       <% end %>
-    <% else %>
-      <%= link_to 'My designs', designer_designs_path(current_user) %>
-    <% end %>
+    </div>
+    <div class="bottom-options">
+      <% unless current_user.company %>
+        <%= link_to 'Add a new design', new_design_path %>
+      <% end %>
+      <%= link_to 'Designers', designers_path %>
+    </div>
   </div>
 </nav>
