@@ -9,7 +9,7 @@
     <p><strong>Search by keyword</strong></p>
     <!-- <input class="search-bar" type="text" placeholder="Search designs">
  -->
-<%= form_tag design_path, method: :get do %>
+<%= form_tag category_path(@category), method: :get do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
