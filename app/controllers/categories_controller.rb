@@ -7,15 +7,14 @@ class CategoriesController < ApplicationController
 
   def show
     if params[:query]
-      @designs = Design.search(params[:query])
-
+      @category = Category.find(params[:id])
+      @designs = Design.global_search(params[:query]).select{ |design| design.categories.include? (@category) }
     else
       @category = Category.find(params[:id])
       @designs = @category.designs
-
-
-    # add_breadcrumb "Categories", :categories_path
-    # add_breadcrumb @category.name, category_path(@category)
     end
+
+    add_breadcrumb "Categories", :categories_path
+    add_breadcrumb @category.name, category_path(@category)
   end
 end
