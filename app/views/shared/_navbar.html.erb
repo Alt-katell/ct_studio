@@ -19,6 +19,12 @@
           <% end %>
         </div>
       </div>
+      <% unless current_user.company %>
+        <%= link_to 'Add a new design', new_design_path %>
+      <% end %>
+    </div>
+    <div class="bottom-options">
+      <%= link_to 'Designers', designers_path %>
       <i class="text-dark fas fa-search"></i>
       <%= form_tag search_results_path, method: :get do %>
         <%= text_field_tag :query,
@@ -28,12 +34,6 @@
           autocomplete: 'off'
         %>
       <% end %>
-    </div>
-    <div class="bottom-options">
-      <% unless current_user.company %>
-        <%= link_to 'Add a new design', new_design_path %>
-      <% end %>
-      <%= link_to 'Designers', designers_path %>
     </div>
   </div>
 </nav>
