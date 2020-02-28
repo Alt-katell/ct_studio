@@ -40,7 +40,7 @@ class DesignsController < ApplicationController
   def destroy
     @design = Design.find(params[:id])
     @design.destroy
-    redirect_to my_designs_path(current_user)
+    redirect_to designer_designs_path(current_user)
   end
 
 
