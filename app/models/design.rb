@@ -13,6 +13,8 @@ class Design < ApplicationRecord
   validates :pattern, presence: true, inclusion: { in: ["seamless tile", "placement"] }
   validates :price, presence: true
   validates :tags, presence: true, length: {minimum: 1, maximum: 5, message: "Please choose between 1 and 5 tags"}
+  validates :tags, presence: true, length: {minimum: 1, maximum: 3, message: "Please choose at least one color"}, inclusion: { in: ["red", "yellow", "blue", "green", "pink", "black"] }
+
   validates :categories, presence: true, length: {minimum: 1, maximum: 3, message: "Please choose between 1 and 3 caategories"}
 
   include PgSearch::Model
