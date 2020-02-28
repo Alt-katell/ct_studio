@@ -19,6 +19,9 @@
     <%= link_to 'Designers', designers_path %>
     <% if current_user.company %>
       <%= link_to 'My design purshases', my_purchase_history_path %>
+      <% unless current_user.purchases.empty? %>
+        <span class="purshase_number"><%= current_user.purchases.count %></span>
+      <% end %>
     <% else %>
       <%= link_to 'My designs', designer_designs_path(current_user) %>
     <% end %>
