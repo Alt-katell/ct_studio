@@ -1,4 +1,4 @@
-const activecat = document.querySelectorAll('.category-choice');
+var activecat = document.querySelectorAll('.category-choice');
 
 activecat.forEach((category) => {
   category.addEventListener('click', (event) => {
@@ -6,8 +6,3 @@ activecat.forEach((category) => {
   });
 });
 
-const addclass = () => {
-  activecat.forEach((category) => {
-    category.classList.add('active');
-  });
-}
