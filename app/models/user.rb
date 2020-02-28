@@ -17,4 +17,8 @@ class User < ApplicationRecord
   validates :phone_number, presence: true
   validates :company_name, presence: true, if: :company
   validates :website, presence: true, if: :company
+
+  def fullname
+    first_name + " " + last_name
+  end
 end
