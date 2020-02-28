@@ -12,7 +12,7 @@
 <%= form_tag category_path(@category), method: :get do %>
   <%= text_field_tag :query,
     params[:query],
-    class: "form-control",
+    class: "search-bar",
     placeholder: "Search designs"
   %>
 <% end %>
