@@ -6,9 +6,9 @@ class DesignsController < ApplicationController
     @category = Category.find_by({name: params[:category]})
     add_breadcrumb "Categories", :categories_path
     if @category
-    add_breadcrumb @category.name, category_path(@category)
+      add_breadcrumb @category.name, category_path(@category)
     end
-    add_breadcrumb @design.name, design_path(@design)
+      add_breadcrumb @design.name, design_path(@design)
   end
 
   def new
