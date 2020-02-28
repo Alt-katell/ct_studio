@@ -6,6 +6,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    # raise
     if params[:query]
       @category = Category.find(params[:id])
       @designs = Design.global_search(params[:query]).select{ |design| design.categories.include? (@category) }
