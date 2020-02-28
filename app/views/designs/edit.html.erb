@@ -28,28 +28,22 @@
 
       <div class="form_parts">
         <h4>Categories</h4>
-        <div class="category-choices">
+        <div class="form-group category-choices">
+          <input type="hidden" name="design[category_ids][]" value="">
           <% Category.all.each do |category| %>
-            <div>
-              <input type="checkbox" class="d-none" value="<%= category.id %>" name="design[category_ids][]" id="design_category_ids_<%= category.id %>">
-              <label for="design_category_ids_<%= category.id %>">
-                <%= category.name %>
-              </label>
-            </div>
+              <input class="d-none" type="checkbox" value="<%= category.id %>" name="design[category_ids][]" id="design_category_ids_<%= category.id %>">
+              <label class="category-choice" for="design_category_ids_<%= category.id %>"><%= category.name %></label>
           <% end %>
         </div>
       </div>
 
       <div class="form_parts">
         <h4>Tags</h4>
-        <div class="category-choices">
+        <div class="form-group category-choices">
+          <input type="hidden" name="design[tag_ids][]" value="">
           <% Tag.all.each do |tag| %>
-            <div >
-              <input type="checkbox" class="hidden" value="<%= tag.id %>" name="design[tag_ids][]" id="design_tag_ids_<%= tag.id %>">
-              <label for="design_tag_ids_<%= tag.id %>">
-                <%= tag.name %>
-              </label>
-            </div>
+              <input class="d-none" type="checkbox" value="<%= tag.id %>" name="design[tag_ids][]" id="design_tag_ids_<%= tag.id %>">
+              <label class="category-choice" for="design_tag_ids_<%= tag.id %>"><%= tag.name %></label>
           <% end %>
         </div>
       </div>

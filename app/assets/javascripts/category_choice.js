@@ -5,3 +5,9 @@ activecat.forEach((category) => {
     event.currentTarget.classList.toggle('active');
   });
 });
+
+const addclass = () => {
+  activecat.forEach((category) => {
+    category.classList.add('active');
+  });
+}

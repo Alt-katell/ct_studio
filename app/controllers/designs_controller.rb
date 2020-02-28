@@ -30,6 +30,7 @@ class DesignsController < ApplicationController
   end
 
   def update
+    addclass();
     @design = Design.find(params[:id])
     @design.update(design_params)
     redirect_to design_path(@design)
