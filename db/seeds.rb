@@ -8,6 +8,7 @@
 require 'open-uri'
 require 'faker'
 
+Purchase.destroy_all
 User.destroy_all
 Category.destroy_all
 Tag.destroy_all
@@ -43,8 +44,8 @@ end
 
 20.times do
   cats_d = Category.all.sample((1..3).to_a.sample)
-  tags_d = Tag.all.sample((1..5).to_a.sample)
-  colors_d = colors.sample((1..2).to_a.sample)
+  tags_d = Tag.all[6..Tag.all.length].sample((1..5).to_a.sample)
+  colors_d = Tag.all[0..5].sample((1..2).to_a.sample)
   colors_d.each do |col|
     tags_d << col
   end
