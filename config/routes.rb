@@ -10,5 +10,7 @@ Rails.application.routes.draw do
     resources :purchases, only: %I(show new create)
   end
 
-  resources :categories, only: %I(show index)
+  resources :categories, only: %I(show index) do
+    get 'search_part', to: 'designs#search'
+  end
 end
