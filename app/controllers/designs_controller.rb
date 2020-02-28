@@ -27,10 +27,11 @@ class DesignsController < ApplicationController
 
   def edit
     @design = Design.find(params[:id])
+    @design_categories_ids = @design.categories.map { |cat| cat.id }
+    @design_tags_ids = @design.tags.map { |tag| tag.id }
   end
 
   def update
-    addclass();
     @design = Design.find(params[:id])
     @design.update(design_params)
     redirect_to design_path(@design)
