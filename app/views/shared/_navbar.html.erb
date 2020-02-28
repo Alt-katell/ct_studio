@@ -11,14 +11,21 @@
         <div data-toggle="dropdown" class="span_link"><%= current_user.first_name %><i class="fas fa-angle-down"></i></div>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <%= link_to "My account", edit_user_registration_path, class: "dropdown-item" %>
-          <%= link_to "Log out", destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
           <% if current_user.company %>
-            <%= link_to 'My design purshases', my_purchase_history_path, class: "dropdown-item" %>
+            <%= link_to 'My purshases', my_purchase_history_path, class: "dropdown-item" %>
           <% else %>
             <%= link_to 'My designs', designer_designs_path(current_user), class: "dropdown-item" %>
           <% end %>
+          <%= link_to "Log out", destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
         </div>
       </div>
+      <% unless current_user.company %>
+        <%= link_to 'Add a new design', new_design_path %>
+      <% end %>
+    </div>
+    <div class="bottom-options">
+      <a href="">Our story</a>
+      <%= link_to 'Our designers', designers_path %>
       <i class="text-dark fas fa-search"></i>
       <%= form_tag search_results_path, method: :get do %>
         <%= text_field_tag :query,
@@ -28,12 +35,6 @@
           autocomplete: 'off'
         %>
       <% end %>
-    </div>
-    <div class="bottom-options">
-      <% unless current_user.company %>
-        <%= link_to 'Add a new design', new_design_path %>
-      <% end %>
-      <%= link_to 'Designers', designers_path %>
     </div>
   </div>
 </nav>

@@ -8,11 +8,13 @@
 require 'open-uri'
 require 'faker'
 
+Purchase.destroy_all
 User.destroy_all
 Category.destroy_all
 Tag.destroy_all
 
 cat = %W(Abstract Animal Colors Floral Geometry Illustration Kids Monochrome Placement)
+colors = %W(red yellow blue green pink black)
 tags = %W(vintage sketch graphic arte photoshop marketing architect modern arquitetura wood painting follow illustrator picoftheday)
 
 name_1 = 'Santiago'
@@ -32,13 +34,21 @@ cat.each do |c|
   Category.create(name: c)
 end
 
+colors.each do |color|
+  Tag.create(name: color)
+end
+
 tags.each do |t|
   Tag.create(name: t)
 end
 
 20.times do
   cats_d = Category.all.sample((1..3).to_a.sample)
-  tags_d = Tag.all.sample((1..5).to_a.sample)
+  tags_d = Tag.all[6..Tag.all.length].sample((1..5).to_a.sample)
+  colors_d = Tag.all[0..5].sample((1..2).to_a.sample)
+  colors_d.each do |col|
+    tags_d << col
+  end
   user_d = User.where('company = ?', false).sample
   n = Faker::Ancient.hero
   d = Design.new(name: n, file_type: %w(psd ai).sample, pattern: ['seamless tile', 'placement'].sample, price: (200..400).to_a.sample)
