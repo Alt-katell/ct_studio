@@ -9,7 +9,7 @@
     <p><strong>Search by keyword</strong></p>
     <!-- <input class="search-bar" type="text" placeholder="Search designs">
  -->
-<%= form_tag category_path(@category), method: :get do %>
+<%= form_tag category_search_part_path(@category), method: :get, remote: true do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
@@ -34,31 +34,6 @@
   </div>
 </div>
 
-<div class="grid-container">
-  <% @designs.each do |d| %>
-    <% unless d.sold %>
-      <%= link_to(design_path(d.id, { category: @category.name })) { %>
-          <div class="design-card">
-            <div class ="design-img">
-              <img src="<%= cl_image_path d.photo.key, width: 400, height: 250, crop: :fill %>" alt="design ">
-            </div>
-            <div class="design-info d-flex justify-content-between">
-              <div class="tit">
-                <h5><%= d.name %></h5>
-              </div>
-              <div class="flex-part">
-                <div class="price">
-                  <h5><%= d.price %>$</h5>
-                </div>
-                <% if current_user == d.user  %>
-                  <div class="sold">
-                      <i class="fas fa-star" style="color:black"></i>
-                  </div>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        <% } %>
-      <% end %>
-  <% end %>
+<div id="search_results">
+  <%= render 'search-results', category: @category, designs: @designs %>
 </div>

@@ -1,0 +1,3 @@
+search = document.querySelector('#search_results');
+
+search.innerHTML = "<%= j render 'categories/search-results', category: @category, designs: @designs %>";

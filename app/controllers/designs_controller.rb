@@ -43,7 +43,10 @@ class DesignsController < ApplicationController
     redirect_to designer_designs_path(current_user)
   end
 
-
+  def search
+    @category = Category.find(params[:category_id])
+    @designs = @category.designs.global_search(params[:query])
+  end
 
 
   private
