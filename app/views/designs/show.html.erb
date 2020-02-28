@@ -9,7 +9,7 @@
     </div>
     <div class="design_info">
       <div class="compart">
-        <p>Designer : <%= @design.user.first_name %> <%= @design.user.last_name %></p>
+        <p>Designer : <strong><%= link_to @design.user.fullname, designer_designs_path(@design.user.id), id:"name-link" %></strong></p>
         <p>Layers : <%= @design.layers ? 'Yes' : 'No' %></p>
       </div>
       <div class="compart">
