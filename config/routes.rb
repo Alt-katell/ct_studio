@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'categories#index'
+  get 'results', to: 'pages#search_results', as: 'search_results'
   get 'my-purchase-history', to: 'pages#my_purchase_history'
   get 'designer/:id/designs', to: 'pages#designer_designs', as: 'designer_designs'
   get 'designers', to: 'pages#designers'

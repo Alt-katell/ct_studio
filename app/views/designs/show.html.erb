@@ -72,9 +72,4 @@
     <% end %>
     </div>
   </div>
-  <div class="categorie_btn">
-    <% @design.categories.each do |cat| %>
-      <%= link_to "Designs of #{cat.name} categorie", category_path(cat), class: 'button mb-6' %>
-    <% end %>
-  </div>
 </div>

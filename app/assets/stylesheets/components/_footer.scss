@@ -15,6 +15,12 @@
   position: absolute;
   bottom: 0;
 
+  input:focus {
+
+    outline: none;
+
+  }
+
   .newsteller-input {
 
     padding: 10px 24px;
