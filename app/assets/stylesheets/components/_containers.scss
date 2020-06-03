@@ -2,70 +2,51 @@
 // Made because problem with the position of the footer,
 // it didn't stayed at the bottom
 .content-container {
-
   width: 70%;
   margin: 0 auto;
   margin-bottom: 450px;
-  padding-top: 100px;
+  // padding-top: 100px;
   width: 70%;
-
 }
 
 .grid-footer-info {
-
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 0 160px;
   margin-top: 16px;
   margin-bottom: 32px;
 
-
   p {
-
     text-align: center;
     margin: 0;
     font-weight: normal;
-
     &:hover {
-
       color: rgb(220,220,220);
       cursor: pointer;
-
     }
-
   }
-
 }
 
 // Grid container for the designers list
 .grid-designers {
-
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 50px;
-
 }
 
 // Grid container for the categories and design cards
 .grid-container {
-
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 32px 64px;
-
   margin: 0 auto;
-
-  // width: 1200px;
-
 }
 
 // Container to display the list of purchases. Made smaller
 // container to not mess with .container class of bootstrap
 .medium-list-container {
-
   margin: 0 auto;
   width: 800px;
-
 }
 
 // Container for the forms
@@ -90,8 +71,6 @@
     display: flex;
     width: 200px;
   }
-
-
 }
 
 
