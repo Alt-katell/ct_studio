@@ -7,7 +7,15 @@
   </div>
 
   <div class="sign-in-container">
+
     <div class="form-style">
+      <div style="text-align: right; margin-bottom: 20px">
+        <strong>This is a demo app.<br>
+        Log in with:<br></strong>
+        email: katell@web.com<br>
+        password: 123456
+      </div>
+
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
           <%= f.input :email,
